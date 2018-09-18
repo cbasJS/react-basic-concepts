@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import ButtonC from "../ButtonC";
+
 export default class Product extends Component {
   constructor(args) {
     super(args);
@@ -15,14 +17,15 @@ export default class Product extends Component {
 
   render() {
     const { name, price } = this.props;
+    const { qty } = this.state;
     return (
       <div>
         <h1>
           {name} - <small>${price}</small>
         </h1>
-        <button onClick={this.buy}>Buy</button>
+        <ButtonC title="buy" handleClick={this.buy} />
         <br />
-        <h4>{this.state.qty} item(s)</h4>
+        <h4>{qty} item(s)</h4>
         <hr />
       </div>
     );
