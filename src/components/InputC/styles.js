@@ -3,6 +3,6 @@ export default theme => ({
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
-    marginTop: 19
+    marginTop: 15
   }
 });

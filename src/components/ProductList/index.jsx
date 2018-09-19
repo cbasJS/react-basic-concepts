@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import Product from "../Product";
 import Total from "../Total";
 import ProductForm from "../ProductForm";
@@ -21,22 +22,35 @@ export default class index extends Component {
   calculateTotal = price => this.setState({ total: this.state.total + price });
   printProduct = () => {
     return this.state.productList.map((product, i) => (
-      <Product
-        key={i}
-        name={product.name}
-        price={product.price}
-        handleTotal={this.calculateTotal}
-      />
+      <div key={i}>
+        <Product          
+          name={product.name}
+          price={product.price}
+          handleTotal={this.calculateTotal}
+        />
+      </div>
     ));
   };
 
   render() {
     return (
-      <div>
-        <ProductForm handleCreate={this.createProduct} />
-        {this.printProduct()}
-        <Total total={this.state.total} />
-      </div>
+      <section>
+        <div>
+          <ProductForm handleCreate={this.createProduct} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "space-around"
+          }}
+        >          
+          {this.printProduct()}
+        </div>
+        <div>
+          <Total total={this.state.total} />
+        </div>
+      </section>
     );
   }
 }

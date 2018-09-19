@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import ButtonC from "../ButtonC";
+import CardC from "../CardC";
 
 export default class Product extends Component {
   constructor(args) {
@@ -20,13 +20,13 @@ export default class Product extends Component {
     const { qty } = this.state;
     return (
       <div>
-        <h1>
-          {name} - <small>${price}</small>
-        </h1>
-        <ButtonC title="buy" handleClick={this.buy} />
-        <br />
-        <h4>{qty} item(s)</h4>
-        <hr />
+        <CardC
+          title={name}
+          titleB="Buy"
+          funcB={this.buy}
+          price={price}
+          items={qty}
+        />
       </div>
     );
   }

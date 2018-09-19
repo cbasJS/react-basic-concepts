@@ -9,12 +9,12 @@ import styles from "./styles";
 
 class ButtonC extends Component {
   render() {
-    const { classes, title, handleClick } = this.props;
+    const { classes, title, handleClick, variantProp } = this.props;
     return (
       <div>
         <Button
           size="small"
-          variant="contained"
+          variant={variantProp}          
           color="primary"
           className={classes.button}
           onClick={handleClick}
@@ -29,10 +29,12 @@ class ButtonC extends Component {
 ButtonC.propTypes = {
   classes: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
+  variantProp: PropTypes.string
 };
 ButtonC.defaultProps = {
-  title: "Lorem Ipsum"
+  title: "Lorem Ipsum",
+  variantProp: "contained"
 };
 
 export default withStyles(styles)(ButtonC);

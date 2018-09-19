@@ -37,27 +37,29 @@ class ProductForm extends Component {
       price: ""
     });
   };
+  
   render() {
     return (
-      <div>
-        <PaperSheet
-          children={
-            <form>
-              <InputC
-                propLabel="Product Name"
-                handleChange={this.setName}
-                propValue={this.state.name}
-              />
-              <InputC
-                propLabel="Product Price"
-                handleChange={this.setPrice}
-                propValue={this.state.price}
-              />
-              <ButtonC title="Agregar" handleClick={this.submit} />
-            </form>
-          }
-        />
-      </div>
+      <PaperSheet
+        children={                 
+          <form style={{ 
+            display: "flex",
+            flexFlow: "column",
+            alignItems: "center" }}>            
+            <InputC
+              propLabel="Product Name"
+              handleChange={this.setName}
+              propValue={this.state.name}
+            />
+            <InputC
+              propLabel="Product Price"
+              handleChange={this.setPrice}
+              propValue={this.state.price}
+            />
+            <ButtonC title="Agregar producto" handleClick={this.submit} />
+          </form>
+        }
+      />
     );
   }
 }

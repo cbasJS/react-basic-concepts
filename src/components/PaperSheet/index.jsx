@@ -9,11 +9,9 @@ import styles from "./styles";
 const PaperSheet = props => {
   const { classes, children } = props;
   return (
-    <div>
-      <Paper className={classes.root} elevation={1}>
-        {children}
-      </Paper>
-    </div>
+    <Paper className={classes.root} elevation={1}>      
+      {children}
+    </Paper>
   );
 };
 
